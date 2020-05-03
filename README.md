@@ -29,3 +29,9 @@ Run the container
 ```sh
 docker run -it edgetpu_compiler
 ```
+
+Compile your model (to current directory)
+
+```sh
+edgetpu_compiler YOUR_MODEL_FILE.tflite
+```
