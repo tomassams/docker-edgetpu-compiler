@@ -16,13 +16,13 @@ docker version
 
 This container has been tested and verified on Windows 10 and Docker CE 19.03.8
 
-## Build the container image
+## Build container
 
 ```sh
 docker build --tag edgetpu_compiler https://github.com/tomassams/docker-edgetpu-compiler.git
 ```
 
-## Run the compiler
+## Run compiler
 
 The easiest is to run the command from the directory containing your .tflite model.
 
