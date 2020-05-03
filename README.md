@@ -16,21 +16,37 @@ docker version
 
 This container has been tested and verified on Windows 10 and Docker CE 19.03.8
 
-## How to run
-
-Build the container image
+## Build the container image
 
 ```sh
 docker build --tag edgetpu_compiler https://github.com/tomassams/docker-edgetpu-compiler.git
 ```
 
-Run the container
+## Run the compiler
+
+The easiest is to run the command from the directory containing your .tflite model.
+
+This command will output a compiled model (_edgetpu.tflite file) to the same directory.
+
+**Windows / PowerShell**
 
 ```sh
-docker run -it edgetpu_compiler
+docker run -it --rm -v ${pwd}:/home/edgetpu edgetpu_compiler edgetpu_compiler YOUR_MODEL_FILE.tflite
 ```
 
-Compile your model (to current directory)
+**MacOS / Terminal**
+
+```sh
+docker run -it --rm -v $(pwd):/home/edgetpu edgetpu_compiler edgetpu_compiler YOUR_MODEL_FILE.tflite
+```
+
+You can also run it from inside the container shell.
+
+Replace /your/path with the path to where you keep the .tflite model, e.g. D:\model or /d/model:
+
+```sh
+docker run -it --rm -v /your/host/path:/home/edgetpu edgetpu_compiler
+```
 
 ```sh
 edgetpu_compiler YOUR_MODEL_FILE.tflite
