@@ -1,6 +1,6 @@
 # docker-edgetpu-compiler
 
-The [Edge TPU Compiler](https://coral.ai/docs/edgetpu/compiler/) (edgetpu_compiler) is a command line tool that compiles a TensorFlow Lite model (.tflite file) into a file that's compatible with the Edge TPU (_edgetpu.tflite).
+The [Edge TPU Compiler](https://coral.ai/docs/edgetpu/compiler/) (edgetpu_compiler) is a command line tool that compiles a TensorFlow Lite model (.tflite file) into a file that's compatible with the Edge TPU (_edgetpu.tflite file).
 
 Because the Edge TPU compiler currently only runs on Debian based Linux systems, we can run the compiler through a Docker container instead when on Windows or MacOS.
 
@@ -24,4 +24,8 @@ Build the container image
 docker build --tag edgetpu_compiler https://github.com/tomassams/docker-edgetpu-compiler.git
 ```
 
+Run the container
 
+```sh
+docker run -it edgetpu_compiler
+```
