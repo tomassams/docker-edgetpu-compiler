@@ -28,13 +28,13 @@ The easiest is to run the command from the directory containing your .tflite mod
 
 This command will output a compiled model (_edgetpu.tflite file) to the same directory.
 
-**Windows / PowerShell**
+**Windows - PowerShell**
 
 ```sh
 docker run -it --rm -v ${pwd}:/home/edgetpu edgetpu_compiler edgetpu_compiler YOUR_MODEL_FILE.tflite
 ```
 
-**MacOS / Terminal**
+**MacOS and Linux - Terminal**
 
 ```sh
 docker run -it --rm -v $(pwd):/home/edgetpu edgetpu_compiler edgetpu_compiler YOUR_MODEL_FILE.tflite
